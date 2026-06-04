@@ -1,8 +1,8 @@
+.ipynb_checkpoints/
+__pycache__/
 env/
 venv/
 .env
 notebooks/
-__pycache__/
-*.pyc
 *.faiss
 *.pkl
