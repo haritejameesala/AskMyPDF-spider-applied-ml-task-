@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AskMyPDF</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+
+<div class="app">
+
+    <aside class="sidebar">
+        <img src="images/Logo.png" alt="AskMyPDF Logo" class="logo">
+
+        <div class="create-box">
+            <input id="newNotebook" placeholder="New Notebook">
+            <button onclick="createNotebook()">Create</button>
+        </div>
+
+        <select id="notebookSelect"></select>
+
+        <div class="actions">
+            <input type="file" id="pdfFile" accept=".pdf">
+            <button onclick="uploadPDF()">Upload PDF</button>
+            <button onclick="buildIndex()">Build Index</button>
+        </div>
+
+        <div class="papers-box">
+            <h3>Papers</h3>
+            <div id="paperList">
+                No PDFs Uploaded
+            </div>
+        </div>
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+                <div class="stat-title">📄 Papers</div>
+                <div class="stat-value" id="paperCount">0</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-title">🧩 Chunks</div>
+                <div class="stat-value" id="chunkCount">0</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-title">🔤 Tokens</div>
+                <div class="stat-value" id="tokenCount">0</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-title">💬 Queries</div>
+                <div class="stat-value" id="queryCount">0</div>
+            </div>
+
+        </div>
+
+    </aside>
+
+    <main class="main">
+
+        <div class="topbar">
+            <h2 id="currentNotebook">No Notebook Selected</h2>
+        </div>
+
+        <div id="chat" class="chat"></div>
+
+        <div class="input-area">
+
+            <input id="query" placeholder="Ask anything about your PDFs...">
+
+            <button onclick="askQuestion()">
+                Send
+            </button>
+            
+        </div>
+
+    </main>
+</div>
+<div id="loadingOverlay" class="loading-overlay hidden">
+
+    <div class="loader"></div>
+
+    <p>Processing...</p>
+
+</div>
+<script src="script.js"></script>
+
+</body>
+</html>
